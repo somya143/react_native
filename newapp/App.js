@@ -14,6 +14,7 @@ function App(){
  const [name,setName] = useState("");
  const [email,setEmail] = useState("");
  const [password,setPassword] = useState("");
+ const [age,setAge] = useState("");
  const [display, setDisplay] = useState(false);
  const [showPass,setShowPass] = useState(true);
  const handleReset = () => {
@@ -21,6 +22,7 @@ function App(){
   setName("");
   setEmail("");
   setPassword("");
+  setAge("");
  }
  const handlePassword = () => {
    if(showPass){
@@ -49,6 +51,8 @@ function App(){
       <Button  title='show pass' onPress={handlePassword} />
       </View>
       </View>
+
+      <TextInput placeholder='Enter Age' value={age} style={styles.textInput} onChangeText={(e) => setAge(e)} />
       
       <View style={{marginBottom:10}}>
         <Button title='Print Detail' onPress={() => setDisplay(true)} />
@@ -64,6 +68,9 @@ function App(){
         </Text>
         <Text style={{fontSize:18}}>
           Password is : {password}
+        </Text>
+        <Text style={{fontSize:18}}>
+          Age is : {age}
         </Text>
       </View>) : null}
       
