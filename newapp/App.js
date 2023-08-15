@@ -4,7 +4,8 @@ import {
   Text,
   View,
   StyleSheet,
-  TextInput
+  TextInput,
+  FlatList
 } from 'react-native';
 import ExStyle from "./styles";
 function App(){
@@ -31,6 +32,23 @@ function App(){
     setShowPass(true)
    }
  }
+
+ const users = [{
+  id:1,
+  name:"somya"
+ },
+{
+  id:2,
+  name:"sudha"
+},
+{
+  id:3,
+  name:"raja"
+},
+{
+  id:4,
+  name:"puja"
+}]
   return (
     <View>
       <Text style={styles.textStyles}>Hello React-Native</Text>
@@ -59,7 +77,7 @@ function App(){
       </View>
       <Button title='Clear Text' onPress={handleReset} />
       
-      {display ? (<View>
+       {display ? (<View>
         <Text style={{fontSize:18}}>
           Name is : {name}
         </Text>
@@ -74,6 +92,13 @@ function App(){
         </Text>
       </View>) : null}
       
+      <View>
+        <Text style={{fontSize:22,textAlign:"center"}}>List Item</Text>
+         <FlatList
+         data={users}
+         renderItem={({item}) => <Text style={{fontSize:20}}>{item.name}</Text>}
+         />
+      </View>
     </View>
 
   );
