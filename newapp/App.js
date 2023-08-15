@@ -154,11 +154,11 @@ function App(){
          />
       </View> */}
 
-      <View style={{marginTop:20}}>
         <Text style={{fontSize:22,textAlign:"center"}}>List using map</Text>
-        <ScrollView style={{marginBottom:50}}>
-          {users.map((item) => <Text style={{backgroundColor:"blue",padding:10,marginTop:10}} >{item.name}</Text>)}
-        </ScrollView>
+      <View style={{flex:1, flexDirection:"row", flexWrap:"wrap"}}>
+        {/* <ScrollView style={{marginBottom:50}}> */}
+          {users.map((item) => <Text style={styles.item} >{item.name}</Text>)}
+        {/* </ScrollView> */}
       </View>
     </View>
 
@@ -181,6 +181,16 @@ const styles = StyleSheet.create({
   borderColor: "blue",
   borderWidth: 2,
   paddingLeft : 10,
+  },
+  item: {
+ backgroundColor:"blue",
+ padding:5,
+ margin:5,
+ height:80,
+ width:80,
+ textAlignVertical:"center",
+ textAlign:"center",
+ fontSize:21
   }  
   
 })
