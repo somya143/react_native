@@ -5,7 +5,8 @@ import {
   View,
   StyleSheet,
   TextInput,
-  FlatList
+  FlatList,
+  ScrollView
 } from 'react-native';
 import ExStyle from "./styles";
 function App(){
@@ -48,10 +49,62 @@ function App(){
 {
   id:4,
   name:"puja"
+},
+{
+  id:5,
+  name:"raja"
+},
+{
+  id:16,
+  name:"raja"
+},
+{
+  id:13,
+  name:"raja"
+},
+{
+  id:23,
+  name:"raja"
+},
+{
+  id:33,
+  name:"raja"
+},
+{
+  id:43,
+  name:"raja"
+},
+{
+  id:53,
+  name:"raja"
+},
+{
+  id:63,
+  name:"raja"
+},
+{
+  id:73,
+  name:"raja"
+},
+{
+  id:83,
+  name:"raja"
+},
+{
+  id:93,
+  name:"raja"
+},
+{
+  id:103,
+  name:"raja"
+},
+{
+  id:113,
+  name:"raja"
 }]
   return (
     <View>
-      <Text style={styles.textStyles}>Hello React-Native</Text>
+      {/* <Text style={styles.textStyles}>Hello React-Native</Text>
       <TextInput placeholder='Enter Name' style={styles.textInput} 
       value={name}
       onChangeText={(e) => setName(e)}
@@ -90,14 +143,22 @@ function App(){
         <Text style={{fontSize:18}}>
           Age is : {age}
         </Text>
-      </View>) : null}
+      </View>) : null} */}
       
-      <View>
-        <Text style={{fontSize:22,textAlign:"center"}}>List Item</Text>
+      {/* <View>
+        <Text style={{fontSize:22,textAlign:"center"}}>List Item using flatlist</Text>
          <FlatList
          data={users}
-         renderItem={({item}) => <Text style={{fontSize:20}}>{item.name}</Text>}
+         keyExtractor={item => item.id}
+         renderItem={({item}) => <Text style={{fontSize:20,backgroundColor:"blue",padding:10,marginTop:10}}>{item.name}</Text>}
          />
+      </View> */}
+
+      <View style={{marginTop:20}}>
+        <Text style={{fontSize:22,textAlign:"center"}}>List using map</Text>
+        <ScrollView style={{marginBottom:50}}>
+          {users.map((item) => <Text style={{backgroundColor:"blue",padding:10,marginTop:10}} >{item.name}</Text>)}
+        </ScrollView>
       </View>
     </View>
 
